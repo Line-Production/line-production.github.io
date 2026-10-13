@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Line Production</title>
+<meta name="description" content="Line Production plans weddings, milkas, henna nights and events in Dammam, Al Khobar and Dhahran.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Karla:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Alexandria:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<style>
+/* Layout: Taif Rose. Arch windows frame every illustration; wine bands alternate with petal-white sections. Bilingual, mirrors for RTL. */
+:root{
+  --bg:#FFF8F7; --surface:#FFFFFF; --fg:#4A1428; --muted:#7A4F5F; --line:#F0D6D4;
+  --accent:#9E2F55; --accent-soft:#F8E0E3; --rose:#F6DCDC; --deep:#6B1E3A; --deep-fg:#FFF8F7; --deep-muted:#F2C9D2; --brass:#F6C1CC; --sage:#8FA58A;
+  --display:"Gilda Display", "Didot", Georgia, serif;
+  --body:"Karla", "Segoe UI", system-ui, sans-serif;
+  --mono:"DM Mono", ui-monospace, Menlo, monospace;
+  --arabic:"Alexandria", "IBM Plex Sans Arabic", Tahoma, sans-serif;
+  --radius:4px; --track:.14em;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1C0C13; --surface:#28121D; --fg:#FBE9EC; --muted:#D2A9B6; --line:#43242F;
+  --accent:#EE9CB0; --accent-soft:#4A2231; --rose:#5A2F3F; --deep:#120609; --deep-fg:#FFF8F7; --deep-muted:#E3B9C4; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1C0C13; --surface:#28121D; --fg:#FBE9EC; --muted:#D2A9B6; --line:#43242F;
+  --accent:#EE9CB0; --accent-soft:#4A2231; --rose:#5A2F3F; --deep:#120609; --deep-fg:#FFF8F7; --deep-muted:#E3B9C4; color-scheme:dark}
+html[dir="rtl"]{
+  --display:"Alexandria", "IBM Plex Sans Arabic", Tahoma, sans-serif;
+  --body:"IBM Plex Sans Arabic", "Geeza Pro", Tahoma, sans-serif;
+  --mono:"IBM Plex Sans Arabic", Tahoma, sans-serif;
+  --track:0;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:16px/1.65 var(--body);margin:0;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--display);font-weight:400;line-height:1.08;text-wrap:balance;margin:0}
+html[dir="rtl"] h1,html[dir="rtl"] h2,html[dir="rtl"] h3{font-weight:600;line-height:1.35;letter-spacing:0}
+p{margin:0}
+a{color:inherit}
+svg{display:block}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+.eyebrow{font:500 12px/1.2 var(--mono);letter-spacing:var(--track);text-transform:uppercase;color:var(--accent)}
+html[dir="rtl"] .eyebrow{font-size:14px;text-transform:none}
+.ar{font-family:var(--arabic);direction:rtl}
+.ico{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.btn{display:inline-flex;align-items:center;gap:.55em;font:600 15px/1 var(--body);padding:14px 22px;border-radius:999px;border:1px solid var(--fg);background:var(--fg);color:var(--bg);text-decoration:none;cursor:pointer;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--fg)}
+.btn .ico{width:18px;height:18px}
+html[dir="rtl"] .btn .arrow{transform:scaleX(-1)}
+.section{padding-block:clamp(64px,9vw,120px)}
+.sec-head{display:grid;gap:16px;max-width:760px;margin-bottom:48px}
+.sec-head h2{font-size:clamp(36px,5vw,60px)}
+.sec-head p{color:var(--muted);max-width:60ch}
+
+/* NAV */
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.brand svg{width:40px;height:40px;color:var(--fg)}
+.brand .wm{display:grid;line-height:1}
+.brand .wm b{font:400 23px/1.1 var(--display);white-space:nowrap}
+html[dir="rtl"] .brand .wm b{font-weight:700}
+.brand .wm span{font:500 9px/1 var(--mono);letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+html[dir="rtl"] .brand .wm span{font-size:11px;letter-spacing:0}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:14px}
+.nav ul a{text-decoration:none;color:var(--muted)}
+.nav ul a:hover{color:var(--fg)}
+.nav .right{display:flex;gap:10px;align-items:center}
+.lang{display:inline-flex;align-items:center;gap:6px;font:600 14px/1 var(--body);padding:10px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.lang .ico{width:17px;height:17px;color:var(--accent)}
+.lang [lang="ar"]{font-family:"IBM Plex Sans Arabic",Tahoma,sans-serif}
+@media (max-width:960px){.nav ul{display:none}}
+@media (max-width:560px){.nav .cta{display:none}.brand .wm b{font-size:19px}.brand svg{width:34px;height:34px}}
+
+/* HERO */
+.hero{padding-block:clamp(40px,6vw,72px) clamp(40px,5vw,64px)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(36px,5vw,72px);align-items:center}
+.hero-copy{min-width:0}
+.hero h1{font-size:clamp(46px,7.4vw,100px);letter-spacing:-.01em;margin-top:18px}
+html[dir="rtl"] .hero h1{font-size:clamp(44px,6.6vw,88px);letter-spacing:0}
+.hero h1 .hl{color:var(--accent);background:linear-gradient(var(--accent),var(--accent)) 0 92%/100% 2px no-repeat;padding-bottom:.04em}
+.hero-mark .ln{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.4s .3s ease-in-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hero .lede{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:48ch;margin-top:24px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero .meta{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:28px;margin-top:40px;padding-top:24px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.hero .meta div{display:flex;gap:12px;align-items:flex-start}
+.hero .meta .ico{width:34px;height:34px;padding:7px;border-radius:50%;background:var(--accent-soft);color:var(--accent)}
+.hero .meta b{display:block;font:400 21px/1.15 var(--display);color:var(--fg);margin-bottom:2px}
+html[dir="rtl"] .hero .meta b{font-weight:700}
+@media (max-width:620px){.hero .meta{grid-template-columns:1fr}}
+.arch-wrap{position:relative;justify-self:center;width:100%;max-width:440px}
+.arch-frame{position:relative;width:100%;aspect-ratio:4/5.4;border-radius:999px 999px var(--radius) var(--radius);overflow:hidden;background:var(--deep);box-shadow:0 30px 60px -30px rgba(36,17,42,.55)}
+.arch-frame::after{content:"";position:absolute;inset:12px;border:1px solid rgba(255,214,224,.55);border-radius:999px 999px 2px 2px;pointer-events:none}
+.arch-frame canvas{position:absolute;inset:0;width:100%;height:100%}
+.arch-frame .cap{position:absolute;left:0;right:0;bottom:28px;text-align:center;color:var(--deep-fg);z-index:2}
+.arch-frame .cap .ar{font-size:44px;color:var(--brass);line-height:1.3}
+.arch-frame .cap small{display:block;font:500 11px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--deep-muted);margin-top:6px}
+html[dir="rtl"] .arch-frame .cap small{font-size:14px;letter-spacing:0}
+.chip{position:absolute;z-index:3;display:flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;border-radius:999px;background:var(--surface);border:1px solid var(--line);box-shadow:0 14px 30px -16px rgba(36,17,42,.45);font:600 14px/1 var(--body);white-space:nowrap;animation:bob 6s ease-in-out infinite}
+html[dir="rtl"] .chip{padding:8px 8px 8px 16px}
+.chip .ico{width:34px;height:34px;padding:7px;border-radius:50%;background:var(--deep);color:var(--brass)}
+.chip.c1{top:14%;inset-inline-start:-38px}
+.chip.c2{top:46%;inset-inline-end:-34px;animation-delay:-2s}
+.chip.c3{bottom:20%;inset-inline-start:-22px;animation-delay:-4s}
+@keyframes bob{50%{transform:translateY(-8px)}}
+@media (max-width:960px){.hero .wrap{grid-template-columns:1fr}.arch-wrap{max-width:360px}}
+@media (max-width:520px){.chip.c1{inset-inline-start:-6px}.chip.c2{inset-inline-end:-6px}.chip.c3{inset-inline-start:-6px}}
+
+/* MARQUEE */
+.ribbon{background:var(--deep);color:var(--deep-fg);overflow:hidden;padding-block:16px;border-block:1px solid #82304F}
+.ribbon .track{display:flex;width:max-content;animation:slide 40s linear infinite}
+html[dir="rtl"] .ribbon .track{animation-name:slide-rtl}
+.ribbon .grp{display:flex;align-items:center;gap:28px;padding-inline-end:28px}
+.ribbon span{font:400 22px/1 var(--display);white-space:nowrap}
+html[dir="rtl"] .ribbon span{font-weight:700}
+.ribbon .ico{color:var(--brass);width:22px;height:22px}
+@keyframes slide{to{transform:translateX(-50%)}}
+@keyframes slide-rtl{to{transform:translateX(50%)}}
+
+/* SERVICES */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:grid;grid-template-rows:auto 1fr;min-width:0;transition:transform .35s,box-shadow .35s}
+.svc:hover{transform:translateY(-6px);box-shadow:0 26px 50px -30px rgba(36,17,42,.5)}
+.svc .scene{aspect-ratio:16/10;width:100%;overflow:hidden}
+.svc .scene svg{width:100%;height:100%;transition:transform .8s ease}
+.svc:hover .scene svg{transform:scale(1.05)}
+.svc .body{padding:26px 26px 30px;display:grid;gap:12px;align-content:start}
+.svc .top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.svc .top .ar{font-size:26px;color:var(--accent);line-height:1.2}
+.svc .badge{width:44px;height:44px;padding:10px;border-radius:50%;background:var(--accent-soft);color:var(--accent)}
+.svc h3{font-size:30px}
+.svc p{color:var(--muted)}
+.svc ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:8px;font-size:15px}
+.svc li{display:flex;justify-content:space-between;gap:12px;border-top:1px dashed var(--line);padding-top:8px}
+.svc li span:last-child{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}
+html[dir="rtl"] .svc li span:last-child{font-size:13px}
+@media (max-width:960px){.services{grid-template-columns:1fr;max-width:560px}}
+
+/* INCLUDED */
+.incl{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.inc{background:var(--bg);padding:28px 24px;display:grid;gap:10px;align-content:start;min-width:0;transition:background .3s}
+.inc:hover{background:var(--surface)}
+.inc .ico{width:52px;height:52px;padding:12px;border-radius:999px 999px 6px 6px;background:var(--deep);color:var(--brass);margin-bottom:6px;stroke-width:1.4}
+.inc h3{font:600 17px/1.3 var(--body)}
+.inc p{color:var(--muted);font-size:14px}
+@media (max-width:900px){.incl{grid-template-columns:1fr 1fr}}
+@media (max-width:440px){.incl{grid-template-columns:1fr}}
+
+/* PLANNER (deep band) */
+.band{background:var(--deep);color:var(--deep-fg)}
+.band .sec-head p{color:var(--deep-muted)}
+.band .eyebrow{color:var(--brass)}
+.planner{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,64px);align-items:start}
+.planner-form{display:grid;gap:18px;position:sticky;top:96px;min-width:0}
+.planner label{font:500 12px/1 var(--mono);letter-spacing:var(--track);text-transform:uppercase;color:var(--deep-muted)}
+html[dir="rtl"] .planner label{font-size:14px}
+.planner input,.planner select{width:100%;margin-top:8px;font:500 18px var(--body);padding:14px 16px;border-radius:var(--radius);border:1px solid #94405F;background:#55152E;color:var(--deep-fg);color-scheme:dark}
+.countdown{border:1px solid #94405F;border-radius:var(--radius);padding:24px;display:grid;gap:6px;background:radial-gradient(circle at 100% 0,rgba(230,188,103,.18),transparent 60%)}
+.countdown b{font:400 clamp(56px,7vw,84px)/1 "Gilda Display",Georgia,serif;color:var(--brass);font-variant-numeric:tabular-nums}
+.countdown span{color:var(--deep-muted);font-size:15px}
+.timeline{list-style:none;margin:0;padding:0;display:grid;min-width:0}
+.timeline li{display:grid;grid-template-columns:44px 140px 1fr auto;gap:16px;padding:18px 0;border-top:1px solid #82304F;align-items:center}
+.timeline li:last-child{border-bottom:1px solid #82304F}
+.timeline .ti{width:44px;height:44px;padding:11px;border-radius:50%;border:1px solid #94405F;color:var(--brass)}
+.timeline .when{font:500 13px/1.3 var(--mono);color:var(--brass);font-variant-numeric:tabular-nums}
+.timeline .when small{display:block;color:var(--deep-muted);font-size:11px;margin-top:4px}
+html[dir="rtl"] .timeline .when small{font-size:12px}
+.timeline h4{margin:0 0 4px;font:600 16px/1.35 var(--body)}
+.timeline p{color:var(--deep-muted);font-size:14px}
+.pill{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border-radius:999px;border:1px solid #94405F;color:var(--deep-muted);white-space:nowrap}
+html[dir="rtl"] .pill{font-size:12px;letter-spacing:0}
+.pill.late{border-color:#C9706B;color:#FFD0C8}
+.pill.now{background:var(--brass);border-color:var(--brass);color:#6B1E3A}
+@media (max-width:960px){.planner{grid-template-columns:1fr}.planner-form{position:static}}
+@media (max-width:600px){.timeline li{grid-template-columns:44px 1fr auto}.timeline li>div:nth-child(3){grid-column:2/-1}}
+
+/* PROCESS */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.step{display:grid;gap:12px;align-content:start;padding-top:22px;border-top:2px solid var(--fg);min-width:0}
+.step .head{display:flex;align-items:center;justify-content:space-between}
+.step .n{font:500 12px var(--mono);color:var(--accent);letter-spacing:.1em}
+html[dir="rtl"] .step .n{font-size:14px;letter-spacing:0}
+.step .ico{width:46px;height:46px;padding:11px;border-radius:50%;border:1px solid var(--line);color:var(--accent)}
+.step h3{font-size:26px}
+.step p{color:var(--muted);font-size:15px}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* PORTFOLIO */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.work{display:grid;gap:14px;min-width:0}
+.work .img{aspect-ratio:3/4;border-radius:999px 999px var(--radius) var(--radius);overflow:hidden;transition:transform .5s ease;box-shadow:0 20px 40px -28px rgba(36,17,42,.6)}
+.work .img svg{width:100%;height:100%}
+.work:hover .img{transform:translateY(-8px)}
+.work h3{font-size:22px}
+.work .m{font:500 12px/1.5 var(--mono);color:var(--muted);letter-spacing:.04em}
+html[dir="rtl"] .work .m{font-size:13px;letter-spacing:0}
+@media (max-width:900px){.gallery{grid-template-columns:1fr 1fr}}
+
+/* PACKAGES */
+.pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.pkg{border:1px solid var(--line);border-radius:var(--radius);padding:32px 28px;display:grid;gap:18px;grid-template-rows:auto auto auto 1fr auto;background:var(--surface);min-width:0}
+.pkg.feat{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),0 30px 60px -36px rgba(168,116,32,.6)}
+.pkg .top{display:flex;justify-content:space-between;align-items:center}
+.pkg .tag{font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+html[dir="rtl"] .pkg .tag{font-size:13px;letter-spacing:0}
+.pkg.feat .tag{color:var(--accent)}
+.pkg .top .ico{width:46px;height:46px;padding:11px;border-radius:999px 999px 6px 6px;background:var(--accent-soft);color:var(--accent)}
+.pkg h3{font-size:34px}
+.pkg .price{font:400 15px var(--body);color:var(--muted)}
+.pkg .price b{font:400 34px/1 "Gilda Display",Georgia,serif;color:var(--fg);font-variant-numeric:tabular-nums}
+.pkg ul{list-style:none;padding:0;margin:0;display:grid;gap:10px;font-size:15px;align-content:start}
+.pkg li{display:flex;gap:10px;align-items:flex-start}
+.pkg li .ico{width:18px;height:18px;color:var(--accent);margin-top:3px;stroke-width:2}
+.pkg .btn{justify-content:center}
+@media (max-width:960px){.pkgs{grid-template-columns:1fr;max-width:560px}}
+
+/* FAQ */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+.faq details{border-top:1px solid var(--line);padding:20px 0}
+.faq summary{cursor:pointer;font:500 18px/1.4 var(--body);list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:"DM Mono",monospace;color:var(--accent)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{color:var(--muted);margin-top:12px;max-width:60ch}
+@media (max-width:860px){.faq{grid-template-columns:1fr}}
+
+/* CONTACT */
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,5vw,72px)}
+.contact h2{font-size:clamp(40px,6vw,72px)}
+.contact .info{display:grid;gap:20px;align-content:start;min-width:0}
+.contact .info p{color:var(--deep-muted)}
+.contact ul.cinfo{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:14px}
+.contact ul.cinfo li{display:flex;gap:14px;align-items:center}
+.contact ul.cinfo .ico{width:42px;height:42px;padding:10px;border-radius:50%;border:1px solid #94405F;color:var(--brass)}
+.contact ul.cinfo small{display:block;font:500 11px/1.4 var(--mono);letter-spacing:var(--track);text-transform:uppercase;color:var(--deep-muted)}
+html[dir="rtl"] .contact ul.cinfo small{font-size:13px}
+.contact ul.cinfo span.v{user-select:all}
+form.enquiry{display:grid;grid-template-columns:1fr 1fr;gap:16px;background:#55152E;border:1px solid #82304F;border-radius:var(--radius);padding:clamp(20px,3vw,32px);min-width:0}
+form.enquiry .full{grid-column:1/-1}
+form.enquiry label{font:500 11px/1 var(--mono);letter-spacing:var(--track);text-transform:uppercase;color:var(--deep-muted);display:grid;gap:8px;min-width:0}
+html[dir="rtl"] form.enquiry label{font-size:14px}
+form.enquiry input,form.enquiry select,form.enquiry textarea{font:16px var(--body);padding:13px 14px;border-radius:var(--radius);border:1px solid #94405F;background:#6B1E3A;color:var(--deep-fg);color-scheme:dark;width:100%}
+form.enquiry .btn{background:var(--brass);border-color:var(--brass);color:#6B1E3A;justify-self:start}
+.note{font-size:14px;color:var(--brass);min-height:1.4em}
+@media (max-width:860px){.contact{grid-template-columns:1fr}form.enquiry{grid-template-columns:1fr}}
+
+/* IDENTITY */
+.idgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.tile{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:var(--surface);display:grid;gap:12px;align-content:space-between;min-width:0}
+.tile .lbl{font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+html[dir="rtl"] .tile .lbl{font-size:13px;letter-spacing:0}
+.t-logo{grid-column:span 3;min-height:280px;place-items:center;text-align:center}
+.t-logo svg{width:100px;height:120px;color:var(--fg);margin:0 auto}
+.t-logo .wm b{font:400 46px/1.1 "Gilda Display",Georgia,serif;display:block;margin-top:8px}
+.t-logo .wm .ar{font-size:30px;color:var(--accent);display:block;margin-top:4px}
+.t-dark{grid-column:span 3;background:var(--deep);color:var(--deep-fg);border-color:var(--deep);place-items:center;text-align:center}
+.t-dark .lbl{color:var(--deep-muted)}
+.t-dark svg.big{width:80px;height:96px;color:#FFF8F7}
+.t-dark .marks{display:flex;gap:28px;align-items:center;flex-wrap:wrap;justify-content:center}
+.t-dark .mono{width:60px;height:60px;border-radius:16px;background:var(--brass);display:grid;place-items:center}
+.t-dark .mono svg{width:38px;height:38px;color:#6B1E3A}
+.t-dark .round{width:60px;height:60px;border-radius:50%;border:1px solid var(--brass);display:grid;place-items:center}
+.t-dark .round svg{width:34px;height:34px;color:var(--brass)}
+.swatches{grid-column:span 4;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.sw{display:grid;gap:8px;font:500 11px/1.4 "DM Mono",monospace;color:var(--muted);min-width:0}
+.sw i{display:block;aspect-ratio:1/1.2;border-radius:999px 999px 2px 2px;border:1px solid var(--line)}
+.sw b{color:var(--fg);font-family:var(--body);font-size:13px;font-weight:600}
+.t-type{grid-column:span 2}
+.t-type .s1{font:400 40px/1 "Gilda Display",Georgia,serif}
+.t-type .s2{font:400 14px/1.55 var(--body);color:var(--muted)}
+.t-type .s3{font:600 30px/1.4 var(--arabic);color:var(--accent);direction:rtl}
+.icons{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.icons .ico{width:46px;height:46px;padding:11px;border-radius:12px;border:1px solid var(--line);color:var(--fg);background:var(--surface)}
+@media (max-width:900px){.idgrid{grid-template-columns:1fr}.t-logo,.t-dark,.swatches,.t-type{grid-column:auto}.swatches{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:420px){.swatches{grid-template-columns:repeat(2,1fr)}}
+
+footer{border-top:1px solid var(--line);padding-block:32px;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important;animation:none!important}.hero-mark .ln{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+
+<!-- ============ SPRITES: logo, icons, illustration parts ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gNight" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#160A1B"/><stop offset=".6" stop-color="#3D1C42"/><stop offset="1" stop-color="#6E3550"/></linearGradient>
+    <linearGradient id="gStage" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#151026"/><stop offset="1" stop-color="#352850"/></linearGradient>
+    <linearGradient id="gSand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7E8D6"/><stop offset="1" stop-color="#E5C29E"/></linearGradient>
+    <linearGradient id="gRose" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FCE7E1"/><stop offset=".55" stop-color="#E2A6A4"/><stop offset="1" stop-color="#8A4560"/></linearGradient>
+    <linearGradient id="gGarden" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F2E3A"/><stop offset=".55" stop-color="#3F5D50"/><stop offset="1" stop-color="#A9B98F"/></linearGradient>
+    <linearGradient id="gGold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A1A10"/><stop offset=".55" stop-color="#7A4B1E"/><stop offset="1" stop-color="#E7C27C"/></linearGradient>
+    <linearGradient id="gBeam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE3A3" stop-opacity=".55"/><stop offset="1" stop-color="#FFE3A3" stop-opacity="0"/></linearGradient>
+    <radialGradient id="gHalo"><stop offset="0" stop-color="#FFD58A" stop-opacity=".7"/><stop offset="1" stop-color="#FFD58A" stop-opacity="0"/></radialGradient>
+  </defs>
+
+  <symbol id="mark" viewBox="0 0 80 96">
+    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M40 30A3 3 0 0 1 46 30A6 6 0 0 1 34 30A9 9 0 0 1 52 30A12 12 0 0 1 28 30"/><path d="M26 30q-2 18 14 22q16-4 14-22"/><path d="M40 52V90"/></g>
+    <path d="M40 70q12-14 22-8q-10 10-22 8z" fill="#8FA58A"/><path d="M40 80q-10-10-18-6q8 8 18 6z" fill="#8FA58A"/>
+  </symbol>
+
+  <!-- illustration parts -->
+  <symbol id="bloom" viewBox="-10 -10 20 20"><g fill="currentColor"><circle cy="-4.6" r="3.8"/><circle cx="4.4" cy="-1.4" r="3.8"/><circle cx="2.7" cy="3.7" r="3.8"/><circle cx="-2.7" cy="3.7" r="3.8"/><circle cx="-4.4" cy="-1.4" r="3.8"/></g><circle r="2.4" fill="#F7E2A8"/></symbol>
+  <symbol id="lantern" viewBox="0 0 40 70"><circle cx="20" cy="38" r="22" fill="url(#gHalo)"/><path d="M14 18l6-7 6 7z" fill="#E6BC67"/><rect x="11" y="18" width="18" height="34" rx="4" fill="#FFD994" stroke="#C8962E" stroke-width="1.5"/><path d="M20 18v34M11 30h18M11 40h18" stroke="#C8962E" stroke-width="1" opacity=".7"/><path d="M13 52h14l-3 6h-8z" fill="#E6BC67"/><circle cx="20" cy="9" r="2.5" fill="none" stroke="#E6BC67" stroke-width="1.5"/></symbol>
+  <symbol id="palm" viewBox="0 0 100 160"><g fill="none" stroke="currentColor" stroke-linecap="round"><path d="M50 160c-3-40 2-80 0-108" stroke-width="6"/><g stroke-width="4"><path d="M50 52c-14-12-30-12-44 2"/><path d="M50 52c14-12 30-12 44 2"/><path d="M50 52c-10-18-24-26-36-24"/><path d="M50 52c10-18 24-26 36-24"/><path d="M50 52c-2-18 2-32 6-40"/><path d="M50 52c-16-2-28 8-34 22"/><path d="M50 52c16-2 28 8 34 22"/></g></g></symbol>
+
+  <!-- icons (24px line set) -->
+  <symbol id="i-rings" viewBox="0 0 24 24"><circle cx="9" cy="15" r="6"/><circle cx="15" cy="15" r="6"/><path d="M9.5 5.5L12 3l2.5 2.5L12 8z"/></symbol>
+  <symbol id="i-cake" viewBox="0 0 24 24"><path d="M3 21h18M5 21v-6h14v6M7.5 15v-4h9v4M12 11V8.5"/><path d="M12 4.5c1 1 1 2.2 0 3-1-.8-1-2 0-3z"/><path d="M5 18c1.5 1 3 1 4.5 0s3-1 4.5 0 3 1 4.5 0"/></symbol>
+  <symbol id="i-flower" viewBox="0 0 24 24"><circle cx="12" cy="5.5" r="2.6"/><circle cx="15.6" cy="9" r="2.6"/><circle cx="12" cy="12.4" r="2.6"/><circle cx="8.4" cy="9" r="2.6"/><path d="M12 15v6M12 18.5c1.5-1.8 3.5-2.2 5-1.5"/></symbol>
+  <symbol id="i-lantern" viewBox="0 0 24 24"><path d="M12 1.5v2M10 6l2-2.5L14 6z"/><path d="M8 6h8l1 3v8l-1 3H8l-1-3V9z"/><path d="M12 9v8M10 20v2.5h4V20"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M8 7l1.8-3h4.4L16 7"/><circle cx="12" cy="13.5" r="3.5"/><path d="M17.5 10h.01"/></symbol>
+  <symbol id="i-drum" viewBox="0 0 24 24"><ellipse cx="12" cy="10" rx="8" ry="3"/><path d="M4 10v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7M8 12.8l2 6.8M16 12.8l-2 6.8"/><path d="M6 2.5l5 5.5M18 2.5l-5 5.5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6 8.5-6"/><path d="M12 16.2c-1.2-.9-2-1.5-2-2.3a1 1 0 0 1 2-.3 1 1 0 0 1 2 .3c0 .8-.8 1.4-2 2.3z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-dallah" viewBox="0 0 24 24"><circle cx="11" cy="2.8" r="1"/><path d="M8.5 4.5h5l.8 3h-6.6z"/><path d="M8.3 7.5c-2.6 3.6-2.6 9.2-.3 12.5h6c2.3-3.3 2.3-8.9-.3-12.5"/><path d="M14.5 10.5c2.2-.3 4-1.8 5.5-4.5"/><path d="M8.3 10c-2.2.5-2.5 5.5-.5 7"/><path d="M5 20h12"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M12 13.2l.9 1.8 2 .3-1.4 1.4.3 2-1.8-1-1.8 1 .3-2-1.4-1.4 2-.3z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16.5 14.2a5 5 0 0 1 5 5.3"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M11 3l1.8 5.4L18 10l-5.2 1.6L11 17l-1.8-5.4L4 10l5.2-1.6z"/><path d="M18.5 15l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 2-2s-1-1.5-1-2.5 1-1.5 2-1.5h2a4 4 0 0 0 4-4c0-4.5-4-8-9-8z"/><circle cx="7.5" cy="11" r="1.1"/><circle cx="10" cy="7" r="1.1"/><circle cx="15" cy="7" r="1.1"/></symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 2.5h6v3H9zM9 12.5l2 2 4-4"/></symbol>
+  <symbol id="i-plate" viewBox="0 0 24 24"><circle cx="12" cy="13" r="6"/><circle cx="12" cy="13" r="3"/><path d="M3 4v4.5a1.5 1.5 0 0 0 3 0V4M4.5 4v17M21 4c-1.6 0-2.5 2-2.5 5.5H21V21"/></symbol>
+  <symbol id="i-venue" viewBox="0 0 24 24"><path d="M4 21V10a8 8 0 0 1 16 0v11M2 21h20M9 21v-5a3 3 0 0 1 6 0v5"/><path d="M12 2.5v-1"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2.5" width="6" height="11.5" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3.5M8.5 21.5h7"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-8-5-8-11a4.5 4.5 0 0 1 8-2.6A4.5 4.5 0 0 1 20 9c0 6-8 11-8 11z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-dress" viewBox="0 0 24 24"><path d="M9 2.5l1 4h4l1-4M10 6.5l-1.5 4L4 21h16l-4.5-10.5L14 6.5M8.5 10.5h7"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.2 4 4.5-.9-.9 4.5 4 2.2-4 2.2.9 4.5-4.5-.9-2.2 4-2.2-4-4.5.9.9-4.5-4-2.2 4-2.2-.9-4.5 4.5.9z"/></symbol>
+</svg>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Line Production">
+      <svg aria-hidden="true"><use href="#mark"/></svg>
+      <span class="wm"><b data-t="brand">Line Production</b><span data-t="brandSub">Weddings &amp; Events</span></span>
+    </a>
+    <ul>
+      <li><a href="#services" data-t="navServices">Services</a></li>
+      <li><a href="#planner" data-t="navPlanner">Planner</a></li>
+      <li><a href="#work" data-t="navWork">Work</a></li>
+      <li><a href="#packages" data-t="navPackages">Packages</a></li>
+      <li><a href="#identity" data-t="navIdentity">Identity</a></li>
+    </ul>
+    <div class="right">
+      <button class="lang" id="langBtn" type="button" aria-label="Switch language"><svg class="ico"><use href="#i-globe"/></svg><span id="langLbl" lang="ar">العربية</span></button>
+      <a class="btn cta" href="#contact" data-t="navCta">Book a consultation</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <svg class="hero-mark" viewBox="0 0 80 96" width="64" height="77" aria-hidden="true" style="color:var(--accent)"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path class="ln" pathLength="1" d="M40 30A3 3 0 0 1 46 30A6 6 0 0 1 34 30A9 9 0 0 1 52 30A12 12 0 0 1 28 30"/><path class="ln" pathLength="1" d="M26 30q-2 18 14 22q16-4 14-22"/><path class="ln" pathLength="1" d="M40 52V90"/></g><path d="M40 70q12-14 22-8q-10 10-22 8z" fill="var(--sage)"/><path d="M40 80q-10-10-18-6q8 8 18 6z" fill="var(--sage)"/></svg>
+      <p class="eyebrow" style="margin-top:16px" data-t="heroEyebrow">Wedding &amp; event planning · Eastern Province</p>
+      <h1 data-t="heroH1">Every celebration, drawn in <span class="hl">one unbroken line</span></h1>
+      <p class="lede" data-t="heroLede">Line Production plans weddings, milkas and henna nights, corporate galas and private gatherings across Dammam, Al Khobar and Dhahran. We hold the timeline, the vendors and the guest list, so the family can be present on the night.</p>
+      <div class="ctas">
+        <a class="btn" href="#contact"><span data-t="heroCta1">Plan my event</span><svg class="ico arrow"><use href="#i-arrow"/></svg></a>
+        <a class="btn ghost" href="#planner"><svg class="ico"><use href="#i-calendar"/></svg><span data-t="heroCta2">See my planning timeline</span></a>
+      </div>
+      <div class="meta">
+        <div><svg class="ico"><use href="#i-rings"/></svg><p><b data-t="m1b">Milka to Zaffa</b><span data-t="m1s">Every chapter of the wedding</span></p></div>
+        <div><svg class="ico"><use href="#i-users"/></svg><p><b>40 – 1,200</b><span data-t="m2s">Guests per event</span></p></div>
+        <div><svg class="ico"><use href="#i-venue"/></svg><p><b data-t="m3b">Two halls</b><span data-t="m3s">Ladies' and men's, in parallel</span></p></div>
+      </div>
+    </div>
+    <div class="arch-wrap">
+      <div class="arch-frame" aria-hidden="true">
+        <canvas id="sky"></canvas>
+        <div class="cap"><div class="ar">ليلة العمر</div><small data-t="archCap">The night of a lifetime</small></div>
+      </div>
+      <div class="chip c1"><svg class="ico"><use href="#i-rings"/></svg><span data-t="chip1">Milka</span></div>
+      <div class="chip c2"><svg class="ico"><use href="#i-flower"/></svg><span data-t="chip2">Henna night</span></div>
+      <div class="chip c3"><svg class="ico"><use href="#i-drum"/></svg><span data-t="chip3">Zaffa</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- RIBBON -->
+<div class="ribbon" aria-hidden="true">
+  <div class="track" id="track"></div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-t="svcEyebrow">What we plan</p>
+      <h2 data-t="svcH2">Three studios under one arch</h2>
+      <p data-t="svcP">Each event gets a lead planner and a production team. For weddings, the same planner carries you from the milka through to the wedding night.</p>
+    </div>
+    <div class="services">
+      <article class="svc">
+        <div class="scene">
+          <svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Wedding kosha stage">
+            <rect width="320" height="200" fill="url(#gNight)"/>
+            <g stroke="#E6BC67" stroke-opacity=".45"><path d="M30 0v46M58 0v70M86 0v34M234 0v34M262 0v70M290 0v46"/></g>
+            <g><circle cx="30" cy="48" r="12" fill="url(#gHalo)"/><circle cx="58" cy="72" r="12" fill="url(#gHalo)"/><circle cx="86" cy="36" r="12" fill="url(#gHalo)"/><circle cx="234" cy="36" r="12" fill="url(#gHalo)"/><circle cx="262" cy="72" r="12" fill="url(#gHalo)"/><circle cx="290" cy="48" r="12" fill="url(#gHalo)"/></g>
+            <g fill="#FFE2A8"><circle cx="30" cy="48" r="3"/><circle cx="58" cy="72" r="3"/><circle cx="86" cy="36" r="3"/><circle cx="234" cy="36" r="3"/><circle cx="262" cy="72" r="3"/><circle cx="290" cy="48" r="3"/></g>
+            <path d="M92 174V100a68 68 0 0 1 136 0v74z" fill="#36173C" stroke="#E6BC67" stroke-width="1.5"/>
+            <path d="M106 174V104a54 54 0 0 1 108 0v70" fill="none" stroke="#E6BC67" stroke-opacity=".35"/>
+            <path d="M160 40l2 4 4 2-4 2-2 4-2-4-4-2 4-2z" fill="#E6BC67"/>
+            <path d="M130 152v-18a10 10 0 0 1 10-10h40a10 10 0 0 1 10 10v18z" fill="#F4DCD6"/>
+            <rect x="122" y="146" width="76" height="15" rx="6" fill="#E7BFB8"/>
+            <path d="M128 161v7M192 161v7" stroke="#E6BC67" stroke-width="2"/>
+            <g style="color:#F2B8C0"><use href="#bloom" x="78" y="140" width="34" height="34"/><use href="#bloom" x="96" y="154" width="26" height="26"/><use href="#bloom" x="208" y="140" width="34" height="34"/><use href="#bloom" x="198" y="154" width="26" height="26"/></g>
+            <g style="color:#FFFFFF"><use href="#bloom" x="70" y="160" width="22" height="22"/><use href="#bloom" x="228" y="160" width="22" height="22"/><use href="#bloom" x="148" y="62" width="24" height="24"/></g>
+            <g style="color:#E6BC67"><use href="#bloom" x="134" y="66" width="18" height="18"/><use href="#bloom" x="168" y="66" width="18" height="18"/></g>
+            <rect x="66" y="174" width="188" height="6" fill="#E6BC67" opacity=".85"/><rect x="52" y="180" width="216" height="6" fill="#B98A2E" opacity=".7"/>
+            <rect y="186" width="320" height="14" fill="#12061A"/>
+          </svg>
+        </div>
+        <div class="body">
+          <div class="top"><span class="ar">أفراح</span><svg class="ico badge"><use href="#i-rings"/></svg></div>
+          <h3 data-t="s1h">Weddings</h3>
+          <p data-t="s1p">The full arc of a Gulf wedding, designed as one story with a single visual language.</p>
+          <ul>
+            <li><span data-t="s1a">Milka (contract ceremony)</span><span data-t="s1av">60–200 guests</span></li>
+            <li><span data-t="s1b">Ghamra &amp; henna night</span><span>80–300</span></li>
+            <li><span data-t="s1c">Kosha &amp; stage design</span><span data-t="s1cv">Custom build</span></li>
+            <li><span data-t="s1d">Zaffa entrance</span><span data-t="s1dv">Choreographed</span></li>
+          </ul>
+        </div>
+      </article>
+      <article class="svc">
+        <div class="scene">
+          <svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Corporate gala stage">
+            <rect width="320" height="200" fill="url(#gStage)"/>
+            <path d="M40 0L4 170h86z" fill="url(#gBeam)"/><path d="M280 0l36 170h-86z" fill="url(#gBeam)"/><path d="M160 0l-30 150h60z" fill="url(#gBeam)" opacity=".7"/>
+            <rect x="92" y="34" width="136" height="78" rx="3" fill="#0F0A1C" stroke="#E6BC67" stroke-opacity=".6"/>
+            <use href="#mark" x="140" y="46" width="40" height="40" style="color:#E6BC67"/>
+            <rect x="122" y="92" width="76" height="3" rx="1.5" fill="#E6BC67" opacity=".6"/><rect x="136" y="99" width="48" height="2" rx="1" fill="#E6BC67" opacity=".35"/>
+            <rect x="30" y="134" width="260" height="12" fill="#E6BC67" opacity=".9"/><rect x="30" y="146" width="260" height="12" fill="#2A1F42"/>
+            <path d="M226 134v-28h24v28z" fill="#2A1F42" stroke="#E6BC67"/><path d="M232 106l6-8" stroke="#E6BC67"/>
+            <g fill="#F6EEE6"><ellipse cx="62" cy="182" rx="26" ry="7"/><ellipse cx="160" cy="184" rx="26" ry="7"/><ellipse cx="258" cy="182" rx="26" ry="7"/></g>
+            <g stroke="#E6BC67" stroke-width="1.5"><path d="M62 175v-10M160 177v-10M258 175v-10"/></g>
+            <g style="color:#F2B8C0"><use href="#bloom" x="54" y="156" width="16" height="16"/><use href="#bloom" x="152" y="158" width="16" height="16"/><use href="#bloom" x="250" y="156" width="16" height="16"/></g>
+          </svg>
+        </div>
+        <div class="body">
+          <div class="top"><span class="ar">مناسبات</span><svg class="ico badge"><use href="#i-mic"/></svg></div>
+          <h3 data-t="s2h">Corporate</h3>
+          <p data-t="s2p">Launches, annual galas and National Day receptions with run-of-show precision.</p>
+          <ul>
+            <li><span data-t="s2a">Product launches</span><span>100–800</span></li>
+            <li><span data-t="s2b">Gala dinners</span><span data-t="s2bv">Seated service</span></li>
+            <li><span data-t="s2c">Conferences</span><span data-t="s2cv">AV &amp; staging</span></li>
+            <li><span data-t="s2d">National Day, 23 Sept</span><span data-t="s2dv">Book by June</span></li>
+          </ul>
+        </div>
+      </article>
+      <article class="svc">
+        <div class="scene">
+          <svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Private majlis gathering">
+            <rect width="320" height="200" fill="url(#gSand)"/>
+            <path d="M118 128V72a42 42 0 0 1 84 0v56z" fill="#2B1A3A"/>
+            <path d="M118 128V72a42 42 0 0 1 84 0v56" fill="none" stroke="#B88A5A" stroke-width="3"/>
+            <path d="M182 60a14 14 0 1 1-12-18 11 11 0 1 0 12 18z" fill="#F4D58D"/>
+            <g fill="#FFF4D6"><circle cx="138" cy="66" r="1.2"/><circle cx="150" cy="54" r="1"/><circle cx="134" cy="92" r="1"/><circle cx="186" cy="96" r="1.2"/></g>
+            <g style="color:#2B5A4A"><use href="#palm" x="16" y="38" width="70" height="112"/></g>
+            <path d="M262 0v26" stroke="#8A5A2E"/><use href="#lantern" x="248" y="22" width="28" height="50"/>
+            <rect x="10" y="132" width="300" height="34" rx="10" fill="#8C3B4B"/>
+            <g fill="#A84D5F"><rect x="22" y="118" width="46" height="26" rx="8"/><rect x="76" y="118" width="46" height="26" rx="8"/><rect x="198" y="118" width="46" height="26" rx="8"/><rect x="252" y="118" width="46" height="26" rx="8"/></g>
+            <rect y="166" width="320" height="34" fill="#5A2C2A"/>
+            <g stroke="#E6BC67" stroke-opacity=".5" stroke-width="2"><path d="M0 174h320M0 192h320"/></g>
+            <g fill="#E6BC67" opacity=".6"><path d="M40 183l6-5 6 5-6 5zM100 183l6-5 6 5-6 5zM160 183l6-5 6 5-6 5zM220 183l6-5 6 5-6 5zM280 183l6-5 6 5-6 5z"/></g>
+            <rect x="122" y="150" width="76" height="8" rx="2" fill="#4A2E22"/>
+            <g fill="#C8962E"><circle cx="152" cy="118" r="2"/><path d="M148 121h8l1 4h-10z"/><path d="M147 125h10c4 7 4 15 1 23h-12c-3-8-3-16 1-23z"/><path d="M157 130c5-1 9-4 12-9l-1 4c-2 5-6 8-10 9z"/><path d="M147 128c-6 1-6 12-1 15" fill="none" stroke="#C8962E" stroke-width="2"/></g>
+            <g fill="#FFF4E6" stroke="#C8962E"><path d="M172 142h8l-1 7h-6z"/><path d="M184 142h8l-1 7h-6z"/></g>
+            <g fill="#6B3A22"><ellipse cx="134" cy="147" rx="7" ry="3"/></g>
+          </svg>
+        </div>
+        <div class="body">
+          <div class="top"><span class="ar">جمعات</span><svg class="ico badge"><use href="#i-dallah"/></svg></div>
+          <h3 data-t="s3h">Private</h3>
+          <p data-t="s3p">Smaller gatherings that still deserve a planner: at home, in a majlis or a rented villa.</p>
+          <ul>
+            <li><span data-t="s3a">Aqiqah &amp; baby welcomes</span><span>30–150</span></li>
+            <li><span data-t="s3b">Graduations</span><span data-t="s3bv">Garden or hall</span></li>
+            <li><span data-t="s3c">Eid gatherings</span><span data-t="s3cv">Family scale</span></li>
+            <li><span data-t="s3d">Anniversaries</span><span data-t="s3dv">Intimate</span></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDED -->
+<section class="section" id="included" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-t="incEyebrow">Everything under one roof</p>
+      <h2 data-t="incH2">What we take off your hands</h2>
+    </div>
+    <div class="incl">
+      <div class="inc"><svg class="ico"><use href="#i-venue"/></svg><h3 data-t="i1h">Venue scouting</h3><p data-t="i1p">Shortlists, site visits and contracts.</p></div>
+      <div class="inc"><svg class="ico"><use href="#i-sparkle"/></svg><h3 data-t="i2h">Kosha &amp; décor</h3><p data-t="i2p">Stage, tables, lighting and the entrance walk.</p></div>
+      <div class="inc"><svg class="ico"><use href="#i-flower"/></svg><h3 data-t="i3h">Flowers</h3><p data-t="i3p">Fresh arrangements, from Taif roses to orchids.</p></div>
+      <div class="inc"><svg class="ico"><use href="#i-camera"/></svg><h3 data-t="i4h">Photography</h3><p data-t="i4p">Separate teams for the ladies' and men's halls.</p></div>
+      <div class="inc"><svg class="ico"><use href="#i-plate"/></svg><h3 data-t="i5h">Catering</h3><p data-t="i5p">Menus, tastings and the dessert table.</p></div>
+      <div class="inc"><svg class="ico"><use href="#i-mail"/></svg><h3 data-t="i6h">Invitations</h3><p data-t="i6p">Printed cards with digital RSVP.</p></div>
+      <div class="inc"><svg class="ico"><use href="#i-drum"/></svg><h3 data-t="i7h">Zaffa &amp; music</h3><p data-t="i7p">Zaffa troupes, DJs and entrance tracks.</p></div>
+      <div class="inc"><svg class="ico"><use href="#i-dallah"/></svg><h3 data-t="i8h">Hospitality</h3><p data-t="i8p">Arabic coffee, dates and a warm guest welcome.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANNER -->
+<section class="section band" id="planner">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-t="plEyebrow">Wedding countdown</p>
+      <h2 data-t="plH2">Enter your date. See what to book, and when.</h2>
+      <p data-t="plP">This is the timeline our planners work back from. Halls in the Eastern Province fill early for winter dates, so the venue always comes first.</p>
+    </div>
+    <div class="planner">
+      <div class="planner-form">
+        <div><label for="wdate" data-t="plDate">Wedding night</label><input type="date" id="wdate"></div>
+        <div>
+          <label for="wsize" data-t="plSize">Guest count</label>
+          <select id="wsize">
+            <option value="s" data-t="optS">Under 150</option>
+            <option value="m" selected>150 – 500</option>
+            <option value="l" data-t="optL">Over 500</option>
+          </select>
+        </div>
+        <div class="countdown"><b id="days">—</b><span id="dayslabel"></span><span id="hijri" style="font-size:13px"></span></div>
+      </div>
+      <ol class="timeline" id="timeline"></ol>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-t="prEyebrow">How we work</p>
+      <h2 data-t="prH2">From first coffee to last guest</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="head"><span class="n" data-t="st1n">STEP 1</span><svg class="ico"><use href="#i-dallah"/></svg></div><h3 data-t="st1h">Discovery</h3><p data-t="st1p">We meet both families, agree the budget and guest count, and set which events the wedding will include.</p></div>
+      <div class="step"><div class="head"><span class="n" data-t="st2n">STEP 2</span><svg class="ico"><use href="#i-palette"/></svg></div><h3 data-t="st2h">Design</h3><p data-t="st2p">A mood board, kosha drawings, floral palette and invitation suite, all approved before anything is ordered.</p></div>
+      <div class="step"><div class="head"><span class="n" data-t="st3n">STEP 3</span><svg class="ico"><use href="#i-clipboard"/></svg></div><h3 data-t="st3h">Production</h3><p data-t="st3p">We contract and manage every vendor and send you one weekly update instead of twenty phone calls.</p></div>
+      <div class="step"><div class="head"><span class="n" data-t="st4n">STEP 4</span><svg class="ico"><use href="#i-star"/></svg></div><h3 data-t="st4h">The night</h3><p data-t="st4p">Separate coordinators run the ladies' and men's halls with one shared run-of-show, timed to the minute.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="section" id="work" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-t="wkEyebrow">Selected concepts</p>
+      <h2 data-t="wkH2">Four moods we design in</h2>
+      <p data-t="wkP">Illustrated concepts. Replace them with your own event photography before launch.</p>
+    </div>
+    <div class="gallery">
+      <article class="work">
+        <div class="img"><svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="300" height="400" fill="url(#gRose)"/>
+          <g fill="#FFFFFF" opacity=".5"><circle cx="60" cy="90" r="2"/><circle cx="230" cy="70" r="1.5"/><circle cx="250" cy="150" r="2"/><circle cx="40" cy="190" r="1.5"/></g>
+          <g fill="#4F7A5A"><ellipse cx="100" cy="230" rx="30" ry="10" transform="rotate(-35 100 230)"/><ellipse cx="200" cy="230" rx="30" ry="10" transform="rotate(35 200 230)"/><ellipse cx="120" cy="170" rx="24" ry="8" transform="rotate(-60 120 170)"/><ellipse cx="185" cy="168" rx="24" ry="8" transform="rotate(60 185 168)"/></g>
+          <path d="M128 250l22 110 22-110z" fill="#F6E1D8"/><path d="M128 250l22 110 22-110" fill="none" stroke="#C99A6A"/>
+          <path d="M150 300c-20-8-34 4-26 14 8 8 22-6 26-14zM150 300c20-8 34 4 26 14-8 8-22-6-26-14zM150 300l-14 40M150 300l14 40" fill="#E6BC67" stroke="#C8962E"/>
+          <g style="color:#F7C6CB"><use href="#bloom" x="96" y="160" width="60" height="60"/><use href="#bloom" x="150" y="160" width="60" height="60"/></g>
+          <g style="color:#FFFFFF"><use href="#bloom" x="122" y="134" width="56" height="56"/><use href="#bloom" x="84" y="200" width="44" height="44"/><use href="#bloom" x="172" y="200" width="44" height="44"/></g>
+          <g style="color:#D97A8C"><use href="#bloom" x="124" y="194" width="52" height="52"/><use href="#bloom" x="106" y="122" width="30" height="30"/><use href="#bloom" x="166" y="124" width="30" height="30"/></g>
+          <g style="color:#E6BC67"><use href="#bloom" x="140" y="110" width="20" height="20"/></g>
+        </svg></div>
+        <h3 data-t="w1h">Rosewater Milka</h3><p class="m" data-t="w1m">Blush &amp; Taif rose · 140 guests</p>
+      </article>
+      <article class="work">
+        <div class="img"><svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="300" height="400" fill="url(#gNight)"/>
+          <path d="M228 70a26 26 0 1 1-22-34 20 20 0 1 0 22 34z" fill="#F4D58D"/>
+          <g fill="#FFF0CC"><circle cx="40" cy="60" r="1.4"/><circle cx="90" cy="30" r="1"/><circle cx="140" cy="80" r="1.2"/><circle cx="260" cy="130" r="1"/><circle cx="30" cy="140" r="1"/><circle cx="180" cy="40" r="1"/></g>
+          <g stroke="#E6BC67" stroke-opacity=".6"><path d="M50 0v130M100 0v200M150 0v110M200 0v180M250 0v150"/></g>
+          <use href="#lantern" x="30" y="122" width="40" height="70"/><use href="#lantern" x="80" y="192" width="40" height="70"/><use href="#lantern" x="128" y="102" width="44" height="77"/><use href="#lantern" x="180" y="172" width="40" height="70"/><use href="#lantern" x="230" y="142" width="40" height="70"/>
+          <path d="M0 340c50-14 100-14 150 0s100 14 150 0v60H0z" fill="#55152E"/>
+          <g fill="none" stroke="#E6BC67" stroke-opacity=".55"><path d="M30 370c10-10 20-10 30 0s20 10 30 0 20-10 30 0 20 10 30 0 20-10 30 0 20 10 30 0 20-10 30 0"/><circle cx="150" cy="356" r="6"/></g>
+        </svg></div>
+        <h3 data-t="w2h">Lantern Night</h3><p class="m" data-t="w2m">Plum &amp; brass · Henna night · 260</p>
+      </article>
+      <article class="work">
+        <div class="img"><svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="300" height="400" fill="url(#gGarden)"/>
+          <g fill="#FFF7DA" opacity=".8"><circle cx="70" cy="50" r="1.2"/><circle cx="150" cy="30" r="1"/><circle cx="230" cy="60" r="1.2"/></g>
+          <g style="color:#17241E"><use href="#palm" x="-30" y="110" width="150" height="240"/><use href="#palm" x="180" y="90" width="160" height="260"/></g>
+          <path d="M20 150q65 50 130 0t130 0" fill="none" stroke="#FFE7A8" stroke-opacity=".6"/>
+          <g fill="#FFE7A8"><circle cx="36" cy="163" r="3"/><circle cx="62" cy="172" r="3"/><circle cx="88" cy="173" r="3"/><circle cx="114" cy="166" r="3"/><circle cx="140" cy="154" r="3"/><circle cx="166" cy="158" r="3"/><circle cx="192" cy="168" r="3"/><circle cx="218" cy="173" r="3"/><circle cx="244" cy="168" r="3"/><circle cx="268" cy="157" r="3"/></g>
+          <g fill="url(#gHalo)"><circle cx="62" cy="172" r="14"/><circle cx="140" cy="154" r="14"/><circle cx="218" cy="173" r="14"/></g>
+          <rect x="40" y="300" width="220" height="12" rx="3" fill="#F6EEDC"/>
+          <path d="M50 312v40M250 312v40" stroke="#5A3A22" stroke-width="4"/>
+          <g fill="#EBD9B4"><rect x="58" y="282" width="10" height="18"/><rect x="232" y="282" width="10" height="18"/></g>
+          <g style="color:#FFFFFF"><use href="#bloom" x="135" y="276" width="30" height="30"/></g>
+          <g style="color:#E7E2B0"><use href="#bloom" x="110" y="286" width="18" height="18"/><use href="#bloom" x="172" y="286" width="18" height="18"/></g>
+          <rect y="352" width="300" height="48" fill="#2E3F2E"/>
+        </svg></div>
+        <h3 data-t="w3h">Garden Majlis</h3><p class="m" data-t="w3m">Olive &amp; jasmine · Outdoor · 90</p>
+      </article>
+      <article class="work">
+        <div class="img"><svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="300" height="400" fill="url(#gGold)"/>
+          <path d="M150 0v60" stroke="#E6BC67" stroke-width="2"/>
+          <circle cx="150" cy="96" r="70" fill="url(#gHalo)"/>
+          <g fill="none" stroke="#F3D58F" stroke-width="2"><path d="M100 80q50 40 100 0"/><path d="M114 100q36 26 72 0"/><path d="M150 60v70"/></g>
+          <g fill="#FFF0C4"><circle cx="100" cy="80" r="4"/><circle cx="200" cy="80" r="4"/><circle cx="114" cy="100" r="3.5"/><circle cx="186" cy="100" r="3.5"/><circle cx="150" cy="60" r="5"/></g>
+          <g fill="#FFF0C4" opacity=".8"><path d="M100 86l-2 10 2 6 2-6zM200 86l-2 10 2 6 2-6zM150 132l-3 14 3 8 3-8z"/></g>
+          <g><ellipse cx="70" cy="300" rx="50" ry="14" fill="#FBF3E4"/><path d="M20 300v34c0 6 22 12 50 12s50-6 50-12v-34" fill="#F5E8D2"/>
+             <ellipse cx="230" cy="300" rx="50" ry="14" fill="#FBF3E4"/><path d="M180 300v34c0 6 22 12 50 12s50-6 50-12v-34" fill="#F5E8D2"/></g>
+          <g stroke="#C8962E" stroke-width="2"><path d="M70 296v-60M230 296v-60"/></g>
+          <g style="color:#FFFFFF"><use href="#bloom" x="52" y="214" width="36" height="36"/><use href="#bloom" x="212" y="214" width="36" height="36"/></g>
+          <g style="color:#E6BC67"><use href="#bloom" x="44" y="232" width="20" height="20"/><use href="#bloom" x="76" y="232" width="20" height="20"/><use href="#bloom" x="204" y="232" width="20" height="20"/><use href="#bloom" x="236" y="232" width="20" height="20"/></g>
+          <ellipse cx="150" cy="380" rx="60" ry="14" fill="#FBF3E4"/>
+        </svg></div>
+        <h3 data-t="w4h">Saffron Gala</h3><p class="m" data-t="w4m">Gold &amp; sand · Corporate · 600</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="section" id="packages" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-t="pkEyebrow">Packages</p>
+      <h2 data-t="pkH2">Planning fees, before vendors</h2>
+      <p data-t="pkP">Prices are our planning and design fee. Venue, catering and décor are quoted separately at cost, with no markup.</p>
+    </div>
+    <div class="pkgs">
+      <article class="pkg">
+        <div class="top"><span class="tag" data-t="p1t">Day-of</span><svg class="ico"><use href="#i-clipboard"/></svg></div>
+        <h3 data-t="p1h">Essentials</h3>
+        <p class="price"><span data-t="from">from</span> <b data-t="p1v">SAR 18,000</b></p>
+        <ul>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-t="p1a">Planner joins 8 weeks out</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-t="p1b">Vendor confirmation calls</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-t="p1c">Run-of-show and floor plan</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-t="p1d">Two coordinators on the night</span></li>
+        </ul>
+        <a class="btn ghost" href="#contact" data-t="p1btn">Ask about Essentials</a>
+      </article>
+      <article class="pkg feat">
+        <div class="top"><span class="tag" data-t="p2t">Most chosen</span><svg class="ico"><use href="#i-sparkle"/></svg></div>
+        <h3 data-t="p2h">Signature</h3>
+        <p class="price"><span data-t="from">from</span> <b data-t="p2v">SAR 45,000</b></p>
+        <ul>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-t="p2a">Full planning from 12 months</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-t="p2b">Kosha and stage design</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-t="p2c">Invitation suite, digital and print</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-t="p2d">Guest list and RSVP tracking</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-t="p2e">Four coordinators across both halls</span></li>
+        </ul>
+        <a class="btn" href="#contact" data-t="p2btn">Ask about Signature</a>
+      </article>
+      <article class="pkg">
+        <div class="top"><span class="tag" data-t="p3t">Multi-event</span><svg class="ico"><use href="#i-rings"/></svg></div>
+        <h3 data-t="p3h">Grand</h3>
+        <p class="price"><span data-t="from">from</span> <b data-t="p3v">SAR 120,000</b></p>
+        <ul>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-t="p3a">Milka, henna night and wedding</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-t="p3b">One creative direction across all three</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-t="p3c">Guest travel and hotel blocks</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-t="p3d">Dedicated production manager</span></li>
+        </ul>
+        <a class="btn ghost" href="#contact" data-t="p3btn">Ask about Grand</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow" data-t="fqEyebrow">Questions families ask</p><h2 data-t="fqH2">Before you call us</h2></div>
+    <div class="faq">
+      <details open><summary data-t="q1">How early should we book?</summary><p data-t="a1">Twelve months for a winter wedding in a popular hall. Six months is workable for smaller events or quieter seasons.</p></details>
+      <details><summary data-t="q2">Do you plan the ladies' and men's sections separately?</summary><p data-t="a2">Yes. Each hall has its own coordinator and vendor team, working from one shared timeline so the zaffa and dinner land at the right moment in both.</p></details>
+      <details><summary data-t="q3">Can we use our own photographer or florist?</summary><p data-t="a3">Of course. We add them to the call sheet and manage them like any other vendor.</p></details>
+      <details><summary data-t="q4">Do you work outside the Eastern Province?</summary><p data-t="a4">We regularly plan in Riyadh and Bahrain. Travel and crew accommodation are added at cost.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section band" id="contact">
+  <div class="wrap contact">
+    <div class="info">
+      <p class="eyebrow" data-t="ctEyebrow">Book a consultation</p>
+      <h2 data-t="ctH2">Tell us about <span style="color:var(--brass)">your date</span></h2>
+      <p data-t="ctP">The first consultation is free and takes about an hour, at our studio or over coffee at your home.</p>
+      <ul class="cinfo">
+        <li><svg class="ico"><use href="#i-pin"/></svg><div><small data-t="ctStudio">Studio</small><span data-t="ctCity">Al Khobar, Eastern Province</span></div></li>
+        <li><svg class="ico"><use href="#i-mail"/></svg><div><small data-t="ctEmail">Email</small><span class="v" dir="ltr">hello@lineproduction.example</span></div></li>
+        <li><svg class="ico"><use href="#i-phone"/></svg><div><small data-t="ctPhone">Phone</small><span class="v" dir="ltr">+966 5X XXX XXXX</span></div></li>
+        <li><svg class="ico"><use href="#i-clock"/></svg><div><small data-t="ctHours">Hours</small><span data-t="ctHoursV">Sun – Thu, 10:00 – 20:00</span></div></li>
+      </ul>
+    </div>
+    <form class="enquiry" id="enquiry" novalidate>
+      <label for="f-name"><span data-t="fName">Your name</span><input id="f-name" required data-tp="fNamePh" placeholder="Noura Al-Qahtani"></label>
+      <label for="f-phone"><span data-t="fPhone">Mobile</span><input id="f-phone" inputmode="tel" dir="ltr" placeholder="05X XXX XXXX"></label>
+      <label for="f-type"><span data-t="fType">Event</span><select id="f-type"><option data-t="o1">Wedding</option><option data-t="o2">Milka</option><option data-t="o3">Henna night</option><option data-t="o4">Corporate</option><option data-t="o5">Private gathering</option></select></label>
+      <label for="f-date"><span data-t="fDate">Date</span><input id="f-date" type="date"></label>
+      <label for="f-msg" class="full"><span data-t="fMsg">What are you imagining?</span><textarea id="f-msg" rows="4" data-tp="fMsgPh" placeholder="Guest count, city, colours you love…"></textarea></label>
+      <button class="btn full" type="submit"><span data-t="fBtn">Request my consultation</span><svg class="ico arrow"><use href="#i-arrow"/></svg></button>
+      <p class="note full" id="fnote" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<!-- IDENTITY -->
+<section class="section" id="identity">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-t="idEyebrow">Brand identity</p>
+      <h2 data-t="idH2">The Line Production identity</h2>
+      <p data-t="idP">The mark is a Taif rose drawn in one continuous line, with two sage leaves. One line is our promise: one team holds every thread from the first meeting to the last guest. Wine, blush and sage keep the brand romantic, warm and fresh.</p>
+    </div>
+    <div class="idgrid">
+      <div class="tile t-logo">
+        <span class="lbl" data-t="idPrimary">Primary lockup</span>
+        <div><svg aria-hidden="true"><use href="#mark"/></svg><div class="wm"><b>Line Production</b><span class="ar">لاين برودكشن</span></div></div>
+        <span class="lbl" data-t="brandSub">Weddings &amp; Events</span>
+      </div>
+      <div class="tile t-dark">
+        <span class="lbl" data-t="idDark">On night plum</span>
+        <div class="marks"><svg class="big" aria-hidden="true"><use href="#mark"/></svg><div class="mono"><svg aria-hidden="true"><use href="#mark"/></svg></div><div class="round"><svg aria-hidden="true"><use href="#mark"/></svg></div></div>
+        <span class="lbl" data-t="idMarks">Mark · App icon · Seal</span>
+      </div>
+      <div class="swatches">
+        <div class="sw"><i style="background:#6B1E3A"></i><b data-t="c1">Taif Wine</b>#6B1E3A</div>
+        <div class="sw"><i style="background:#C25B73"></i><b data-t="c2">Rose</b>#C25B73</div>
+        <div class="sw"><i style="background:#F6DCDC"></i><b data-t="c3">Blush</b>#F6DCDC</div>
+        <div class="sw"><i style="background:#8FA58A"></i><b data-t="c4">Sage</b>#8FA58A</div>
+        <div class="sw"><i style="background:#FFF8F7"></i><b data-t="c5">Petal White</b>#FFF8F7</div>
+      </div>
+      <div class="tile t-type">
+        <span class="lbl" data-t="idType">Typography</span>
+        <div class="s1">Gilda Display</div>
+        <div class="s3">ألكسندريا</div>
+        <div class="s2" data-t="idTypeP">Gilda Display and Alexandria for headlines. Karla and IBM Plex Sans Arabic for reading text. DM Mono for dates and labels.</div>
+      </div>
+      <div class="tile icons" style="grid-column:1/-1">
+        <span class="lbl" data-t="idIcons" style="flex-basis:100%">Icon set</span>
+        <svg class="ico"><use href="#i-rings"/></svg><svg class="ico"><use href="#i-cake"/></svg><svg class="ico"><use href="#i-flower"/></svg><svg class="ico"><use href="#i-lantern"/></svg><svg class="ico"><use href="#i-camera"/></svg><svg class="ico"><use href="#i-drum"/></svg><svg class="ico"><use href="#i-mail"/></svg><svg class="ico"><use href="#i-dallah"/></svg><svg class="ico"><use href="#i-venue"/></svg><svg class="ico"><use href="#i-dress"/></svg><svg class="ico"><use href="#i-mic"/></svg><svg class="ico"><use href="#i-plate"/></svg><svg class="ico"><use href="#i-calendar"/></svg><svg class="ico"><use href="#i-heart"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-sparkle"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top"><svg aria-hidden="true" style="width:28px;height:28px"><use href="#mark"/></svg><span class="wm"><b style="font-size:18px" data-t="brand">Line Production</b></span></a>
+    <span data-t="ftCities">Weddings &amp; events · Dammam · Al Khobar · Dhahran</span>
+    <span>© 2026 <span data-t="brand">Line Production</span></span>
+  </div>
+</footer>
+
+<script>
+/* ================= Arabic dictionary ================= */
+const AR={
+brand:"لاين برودكشن",brandSub:"أفراح ومناسبات",
+navServices:"خدماتنا",navPlanner:"المخطط",navWork:"أعمالنا",navPackages:"الباقات",navIdentity:"الهوية",navCta:"احجز استشارة",
+heroEyebrow:"تخطيط الأفراح والمناسبات · المنطقة الشرقية",
+heroH1:"كل مناسبة، نرسمها <span class='hl'>بخطٍّ واحد لا ينقطع</span>",
+heroLede:"تخطط لاين برودكشن لحفلات الزفاف والملكة وليالي الحناء، والحفلات الرسمية للشركات، والمناسبات الخاصة في الدمام والخبر والظهران. نتولى الجدول الزمني والموردين وقائمة الضيوف، لتعيش العائلة الليلة بكل تفاصيلها.",
+heroCta1:"خطط لمناسبتي",heroCta2:"اعرض جدول التحضير",
+m1b:"من الملكة إلى الزفة",m1s:"كل فصول الزواج",m2s:"ضيف في المناسبة الواحدة",m3b:"قاعتان",m3s:"النساء والرجال في وقت واحد",
+archCap:"من الملكة حتى الزفة",chip1:"ملكة",chip2:"ليلة الحناء",chip3:"الزفة",
+svcEyebrow:"ما نخطط له",svcH2:"ثلاثة استوديوهات تحت قوس واحد",
+svcP:"لكل مناسبة منسّق رئيسي وفريق إنتاج. وفي الأعراس، يرافقكم المنسّق نفسه من الملكة حتى ليلة الزفاف.",
+s1h:"الأفراح",s1p:"رحلة الزواج الخليجي كاملة، مصممة كقصة واحدة بلغة بصرية واحدة.",
+s1a:"الملكة (عقد القران)",s1av:"60–200 ضيف",s1b:"الغمرة وليلة الحناء",s1c:"تصميم الكوشة والمسرح",s1cv:"تصميم خاص",s1d:"دخلة الزفة",s1dv:"بتنسيق كامل",
+s2h:"الشركات",s2p:"تدشين المنتجات والحفلات السنوية واحتفالات اليوم الوطني بجدول تنفيذ دقيق.",
+s2a:"تدشين المنتجات",s2b:"حفلات العشاء الرسمية",s2bv:"خدمة على الطاولات",s2c:"المؤتمرات",s2cv:"صوتيات ومسرح",s2d:"اليوم الوطني، 23 سبتمبر",s2dv:"احجز قبل يونيو",
+s3h:"المناسبات الخاصة",s3p:"تجمعات أصغر تستحق منسّقاً أيضاً: في المنزل أو المجلس أو استراحة.",
+s3a:"العقيقة واستقبال المولود",s3b:"حفلات التخرج",s3bv:"حديقة أو قاعة",s3c:"تجمعات العيد",s3cv:"بحجم العائلة",s3d:"ذكرى الزواج",s3dv:"أجواء حميمة",
+incEyebrow:"كل شيء تحت سقف واحد",incH2:"ما نتولاه عنكم",
+i1h:"اختيار القاعة",i1p:"قائمة مختصرة وزيارات للمواقع وعقود.",i2h:"الكوشة والديكور",i2p:"المسرح والطاولات والإضاءة وممر الدخول.",
+i3h:"الزهور",i3p:"تنسيقات طازجة، من الورد الطائفي إلى الأوركيد.",i4h:"التصوير",i4p:"فرق منفصلة لقاعتي النساء والرجال.",
+i5h:"الضيافة والبوفيه",i5p:"القوائم والتذوق وطاولة الحلى.",i6h:"الدعوات",i6p:"بطاقات مطبوعة مع تأكيد حضور رقمي.",
+i7h:"الزفة والموسيقى",i7p:"فرق الزفة ومنسقو الموسيقى وأغاني الدخلة.",i8h:"الاستقبال",i8p:"القهوة العربية والتمر وترحيب دافئ بالضيوف.",
+plEyebrow:"العد التنازلي للزفاف",plH2:"أدخل تاريخك، واعرف ماذا تحجز ومتى.",
+plP:"هذا هو الجدول الذي يعمل عليه منسقونا بالعكس. القاعات في المنطقة الشرقية تُحجز مبكراً لمواعيد الشتاء، لذلك تأتي القاعة دائماً أولاً.",
+plDate:"ليلة الزفاف",plSize:"عدد الضيوف",optS:"أقل من 150",optL:"أكثر من 500",
+prEyebrow:"كيف نعمل",prH2:"من أول فنجان قهوة حتى آخر ضيف",
+st1n:"الخطوة 1",st1h:"التعارف",st1p:"نلتقي بالعائلتين، ونتفق على الميزانية وعدد الضيوف، ونحدد المناسبات التي يشملها الزواج.",
+st2n:"الخطوة 2",st2h:"التصميم",st2p:"لوحة إلهام ورسومات الكوشة وألوان الزهور ومجموعة الدعوات، وكلها تُعتمد قبل أي طلب.",
+st3n:"الخطوة 3",st3h:"الإنتاج",st3p:"نتعاقد مع كل الموردين وندير عملهم، ونرسل لكم تحديثاً أسبوعياً واحداً بدل عشرين مكالمة.",
+st4n:"الخطوة 4",st4h:"الليلة",st4p:"منسقون منفصلون يديرون قاعتي النساء والرجال بجدول واحد مشترك، محسوب بالدقيقة.",
+wkEyebrow:"تصورات مختارة",wkH2:"أربعة أجواء نصمم بها",wkP:"رسومات توضيحية. استبدلوها بصور مناسباتكم قبل الإطلاق.",
+w1h:"ملكة ماء الورد",w1m:"وردي وورد طائفي · 140 ضيفاً",w2h:"ليلة الفوانيس",w2m:"بنفسجي ونحاسي · ليلة حناء · 260",
+w3h:"مجلس الحديقة",w3m:"زيتوني وياسمين · في الهواء الطلق · 90",w4h:"حفل الزعفران",w4m:"ذهبي ورملي · شركات · 600",
+pkEyebrow:"الباقات",pkH2:"رسوم التخطيط، قبل الموردين",
+pkP:"الأسعار تمثل رسوم التخطيط والتصميم فقط. القاعة والضيافة والديكور تُسعَّر منفصلة بالتكلفة الفعلية دون أي هامش.",
+from:"يبدأ من",
+p1t:"يوم المناسبة",p1h:"الأساسية",p1v:"18,000 ريال",p1a:"ينضم المنسق قبل 8 أسابيع",p1b:"تأكيد الموردين هاتفياً",p1c:"جدول التنفيذ ومخطط القاعة",p1d:"منسقان في ليلة المناسبة",p1btn:"استفسر عن الأساسية",
+p2t:"الأكثر طلباً",p2h:"المميزة",p2v:"45,000 ريال",p2a:"تخطيط كامل قبل 12 شهراً",p2b:"تصميم الكوشة والمسرح",p2c:"الدعوات الرقمية والمطبوعة",p2d:"قائمة الضيوف ومتابعة تأكيد الحضور",p2e:"أربعة منسقين في القاعتين",p2btn:"استفسر عن المميزة",
+p3t:"عدة مناسبات",p3h:"الفاخرة",p3v:"120,000 ريال",p3a:"الملكة وليلة الحناء والزفاف",p3b:"رؤية إبداعية واحدة للمناسبات الثلاث",p3c:"سفر الضيوف وحجوزات الفنادق",p3d:"مدير إنتاج مخصص",p3btn:"استفسر عن الفاخرة",
+fqEyebrow:"أسئلة تطرحها العائلات",fqH2:"قبل أن تتصلوا بنا",
+q1:"متى يجب أن نحجز؟",a1:"قبل اثني عشر شهراً لزفاف شتوي في قاعة مطلوبة. ستة أشهر تكفي للمناسبات الأصغر أو خارج المواسم.",
+q2:"هل تخططون لقسمي النساء والرجال بشكل منفصل؟",a2:"نعم. لكل قاعة منسق وفريق موردين، ويعمل الجميع وفق جدول واحد لتتزامن الزفة والعشاء في القاعتين.",
+q3:"هل يمكننا الاستعانة بمصور أو منسق زهور خاص بنا؟",a3:"بالتأكيد. نضيفهم إلى قائمة الموردين وندير عملهم كأي مورد آخر.",
+q4:"هل تعملون خارج المنطقة الشرقية؟",a4:"نخطط باستمرار لمناسبات في الرياض والبحرين، وتُضاف تكاليف السفر وإقامة الفريق بالتكلفة الفعلية.",
+ctEyebrow:"احجز استشارة",ctH2:"حدّثنا عن <span style='color:var(--brass)'>موعدك</span>",
+ctP:"الاستشارة الأولى مجانية وتستغرق نحو ساعة، في مكتبنا أو على فنجان قهوة في منزلكم.",
+ctStudio:"المكتب",ctCity:"الخبر، المنطقة الشرقية",ctEmail:"البريد الإلكتروني",ctPhone:"الجوال",ctHours:"ساعات العمل",ctHoursV:"الأحد – الخميس، 10:00 – 20:00",
+fName:"الاسم",fPhone:"رقم الجوال",fType:"نوع المناسبة",fDate:"التاريخ",fMsg:"كيف تتخيلون المناسبة؟",fBtn:"أرسل طلب الاستشارة",
+o1:"زفاف",o2:"ملكة",o3:"ليلة حناء",o4:"مناسبة شركة",o5:"مناسبة خاصة",
+idEyebrow:"الهوية البصرية",idH2:"هوية لاين برودكشن",
+idP:"الشعار وردة طائفية مرسومة بخط واحد متصل مع ورقتين خضراوين. الخط الواحد هو وعدنا: فريق واحد يمسك بكل الخيوط من أول لقاء حتى آخر ضيف. والألوان العنابي والوردي والأخضر الهادئ تمنح الهوية دفئاً ورومانسية.",
+idPrimary:"الشعار الأساسي",idDark:"على الخلفية الداكنة",idMarks:"الرمز · أيقونة التطبيق · الختم",idType:"الخطوط",idIcons:"مجموعة الأيقونات",
+idTypeP:"Gilda Display وAlexandria للعناوين، وKarla وIBM Plex Sans Arabic للنصوص، وDM Mono للتواريخ والعناوين الصغيرة.",
+c1:"عنابي طائفي",c2:"وردي",c3:"وردي فاتح",c4:"أخضر هادئ",c5:"أبيض بتلات",
+ftCities:"أفراح ومناسبات · الدمام · الخبر · الظهران"
+};
+const AR_PH={fNamePh:"نورة القحطاني",fMsgPh:"عدد الضيوف، المدينة، الألوان المفضلة…"};
+
+const UI={
+  en:{days:"days until your wedding night",passed:"This date has passed. Pick a future date.",late:"Overdue",next:"Next",up:"Upcoming",
+      nameMissing:"Add your name so we know who to call back.",thanks:n=>`Thank you, ${n}. This preview doesn't send messages yet; connect the form to your inbox before launch.`,
+      ribbon:["Weddings","Milka","Henna nights","Kosha","Zaffa","Galas","Launches","Graduations","Aqiqah"]},
+  ar:{days:"يوماً حتى ليلة زفافك",passed:"هذا التاريخ قد مضى. اختر تاريخاً قادماً.",late:"متأخر",next:"التالي",up:"قادم",
+      nameMissing:"أضف اسمك لنعرف بمن نتصل.",thanks:n=>`شكراً يا ${n}. هذه النسخة التجريبية لا ترسل الرسائل بعد؛ اربطوا النموذج ببريدكم قبل الإطلاق.`,
+      ribbon:["أفراح","ملكة","ليالي الحناء","كوشة","زفة","حفلات رسمية","تدشين منتجات","حفلات تخرج","عقيقة"]}
+};
+const RIBBON_ICONS=["i-rings","i-heart","i-flower","i-sparkle","i-drum","i-star","i-mic","i-cake","i-dallah"];
+
+const MILESTONES=[
+  {m:12,i:"i-venue",en:["Book the hall","Set the budget and guest list, then secure the venue. Winter Thursdays go first."],ar:["احجزوا القاعة","حددوا الميزانية وقائمة الضيوف، ثم احجزوا القاعة. أيام الخميس في الشتاء تُحجز أولاً."]},
+  {m:9,i:"i-camera",en:["Photographer & videographer","Confirm a female photographer for the ladies’ hall."],ar:["التصوير الفوتوغرافي والفيديو","أكدوا حجز مصورة لقاعة النساء."]},
+  {m:7,i:"i-sparkle",en:["Kosha designer & florist","Approve stage drawings and the floral palette."],ar:["مصمم الكوشة ومنسق الزهور","اعتماد رسومات المسرح وألوان الزهور."]},
+  {m:6,i:"i-mail",en:["Invitation suite","Design digital and printed cards together so they match."],ar:["الدعوات","صمموا الدعوات الرقمية والمطبوعة معاً لتتناسقا."]},
+  {m:4,i:"i-dress",en:["Dress fittings & menu tasting","First fitting, catering tasting and the dessert table."],ar:["قياس الفستان وتذوق القائمة","أول قياس، وتذوق البوفيه وطاولة الحلى."]},
+  {m:3,i:"i-users",en:["Send invitations","Open RSVP tracking and assign table hosts."],ar:["إرسال الدعوات","افتحوا متابعة تأكيد الحضور ووزعوا مضيفي الطاولات."]},
+  {m:2,i:"i-drum",en:["Henna night & zaffa","Book the henna artist and the zaffa troupe; choose the entrance song."],ar:["ليلة الحناء والزفة","احجزوا الحنّاية وفرقة الزفة، واختاروا أغنية الدخلة."]},
+  {m:1,i:"i-clipboard",en:["Final numbers","Lock the guest count, seating plan and vendor call sheet."],ar:["الأعداد النهائية","ثبتوا عدد الضيوف ومخطط الجلوس وقائمة الموردين."]},
+  {m:.25,i:"i-star",en:["Rehearsal week","Walk-through at the hall with both coordinators."],ar:["أسبوع البروفة","جولة في القاعة مع المنسقين."]}
+];
+
+let LANG="en";
+const ORIG=new Map(), ORIG_PH=new Map();
+document.querySelectorAll("[data-t]").forEach(el=>ORIG.set(el,el.innerHTML));
+document.querySelectorAll("[data-tp]").forEach(el=>ORIG_PH.set(el,el.placeholder));
+
+function setLang(l){
+  LANG=l; const ar=l==="ar";
+  document.documentElement.lang=l; document.documentElement.dir=ar?"rtl":"ltr";
+  document.title=ar?"لاين برودكشن":"Line Production";
+  document.querySelectorAll("[data-t]").forEach(el=>{const k=el.dataset.t; el.innerHTML=ar&&AR[k]!=null?AR[k]:ORIG.get(el);});
+  document.querySelectorAll("[data-tp]").forEach(el=>{el.placeholder=ar?AR_PH[el.dataset.tp]:ORIG_PH.get(el);});
+  const lbl=document.getElementById("langLbl"); lbl.textContent=ar?"English":"العربية"; lbl.lang=ar?"en":"ar";
+  buildRibbon(); renderPlan(); document.getElementById("fnote").textContent="";
+  try{localStorage.setItem("lp-lang",l);}catch(e){}
+}
+document.getElementById("langBtn").addEventListener("click",()=>setLang(LANG==="ar"?"en":"ar"));
+
+function buildRibbon(){
+  const words=UI[LANG].ribbon;
+  const grp=()=>`<div class="grp">${words.map((w,i)=>`<svg class="ico"><use href="#${RIBBON_ICONS[i]}"/></svg><span>${w}</span>`).join("")}</div>`;
+  document.getElementById("track").innerHTML=grp()+grp();
+}
+
+/* ================= planner ================= */
+function monthsBefore(d,m){const r=new Date(d); if(m<1) r.setDate(r.getDate()-7); else r.setMonth(r.getMonth()-m); return r;}
+function arMonths(m){return m>=11?`قبل ${m} شهراً`:m>=3?`قبل ${m} أشهر`:m===2?"قبل شهرين":"قبل شهر";}
+function renderPlan(){
+  const inp=document.getElementById("wdate"), size=document.getElementById("wsize").value, ar=LANG==="ar", T=UI[LANG];
+  const d=new Date(inp.value+"T19:00:00"); if(isNaN(d)) return;
+  const greg=new Intl.DateTimeFormat(ar?"ar-SA-u-ca-gregory-nu-latn":"en-GB",{day:"numeric",month:"short",year:"numeric"});
+  const hij=new Intl.DateTimeFormat(ar?"ar-SA-u-ca-islamic-umalqura-nu-latn":"en-u-ca-islamic-umalqura",{day:"numeric",month:"long",year:"numeric"});
+  const today=new Date(); today.setHours(0,0,0,0);
+  const days=Math.ceil((d-today)/864e5);
+  document.getElementById("days").textContent=days>=0?days.toLocaleString("en"):0;
+  document.getElementById("dayslabel").textContent=days>=0?T.days:T.passed;
+  document.getElementById("hijri").textContent=hij.format(d);
+  const shift=size==="l"?2:size==="s"?-1:0;
+  let nowShown=false;
+  document.getElementById("timeline").innerHTML=MILESTONES.map(ms=>{
+    const m=ms.m>=1?Math.max(1,ms.m+(ms.m>=6?shift:0)):ms.m;
+    const due=monthsBefore(d,m), late=due<today;
+    let pill;
+    if(late) pill=`<span class="pill late">${T.late}</span>`;
+    else if(!nowShown){nowShown=true;pill=`<span class="pill now">${T.next}</span>`;}
+    else pill=`<span class="pill">${T.up}</span>`;
+    const lab=ar?(m<1?"قبل أسبوع":arMonths(m)):(m<1?"1 week before":m+(m===1?" month before":" months before"));
+    const [t,desc]=ms[LANG];
+    return `<li><svg class="ico ti"><use href="#${ms.i}"/></svg><div class="when">${greg.format(due)}<small>${lab}</small></div><div><h4>${t}</h4><p>${desc}</p></div>${pill}</li>`;
+  }).join("");
+}
+(function(){
+  const inp=document.getElementById("wdate");
+  const def=new Date(); def.setMonth(def.getMonth()+8); def.setDate(15);
+  let saved=null; try{saved=localStorage.getItem("lp-date");}catch(e){}
+  inp.value=saved||def.toISOString().slice(0,10);
+  inp.addEventListener("change",()=>{try{localStorage.setItem("lp-date",inp.value);}catch(e){} renderPlan();});
+  document.getElementById("wsize").addEventListener("change",renderPlan);
+})();
+
+/* ================= form ================= */
+document.getElementById("enquiry").addEventListener("submit",e=>{
+  e.preventDefault();
+  const n=document.getElementById("f-name").value.trim(), note=document.getElementById("fnote");
+  if(!n){note.textContent=UI[LANG].nameMissing;document.getElementById("f-name").focus();return;}
+  note.textContent=UI[LANG].thanks(n.split(" ")[0]);
+});
+
+/* ================= hero sky ================= */
+(function(){
+  const c=document.getElementById("sky"); if(!c) return;
+  const x=c.getContext("2d"); let w,h,dpr,parts=[];
+  const still=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function size(){dpr=Math.min(devicePixelRatio||1,2);w=c.clientWidth;h=c.clientHeight;c.width=w*dpr;c.height=h*dpr;x.setTransform(dpr,0,0,dpr,0,0);
+    parts=Array.from({length:Math.round(w*h/5200)},()=>({x:Math.random()*w,y:Math.random()*h,r:1.5+Math.random()*3.2,s:.15+Math.random()*.35,p:Math.random()*6.28}));}
+  function draw(t){
+    const g=x.createLinearGradient(0,0,0,h);g.addColorStop(0,"#3E0F22");g.addColorStop(.55,"#8E3B57");g.addColorStop(1,"#EBB0B5");
+    x.fillStyle=g;x.fillRect(0,0,w,h);
+    x.fillStyle="rgba(255,236,200,.7)";
+    for(let i=0;i<40;i++){x.fillRect((i*97)%w,(i*53)%(h*.45),1,1);}
+    x.fillStyle="#F4D58D";x.beginPath();x.arc(w*.72,h*.16,w*.07,0,6.28);x.fill();
+    x.fillStyle="#4A1428";x.beginPath();x.arc(w*.72+w*.03,h*.16-w*.015,w*.062,0,6.28);x.fill();
+    for(const p of parts){
+      if(!still){p.y-=p.s;p.x+=Math.sin(t/1600+p.p)*.15; if(p.y<-10){p.y=h+10;p.x=Math.random()*w;}}
+      const a=.55+.35*Math.sin(t/700+p.p);
+      const rg=x.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*5);
+      rg.addColorStop(0,`rgba(255,206,218,${a})`);rg.addColorStop(1,"rgba(255,180,200,0)");
+      x.fillStyle=rg;x.beginPath();x.arc(p.x,p.y,p.r*5,0,6.28);x.fill();
+      x.fillStyle=`rgba(255,240,244,${a})`;x.beginPath();x.arc(p.x,p.y,p.r*.6,0,6.28);x.fill();
+    }
+    x.fillStyle="#4A1428"; const base=h*.82; x.fillRect(0,base,w,h-base);
+    for(let i=0;i<5;i++){const cw=w/5,cx=i*cw+cw/2,r=cw*.32;x.beginPath();x.moveTo(cx-r,base);x.lineTo(cx-r,base-r*1.2);x.arc(cx,base-r*1.2,r,Math.PI,0);x.lineTo(cx+r,base);x.fill();}
+    if(!still) requestAnimationFrame(draw);
+  }
+  size(); addEventListener("resize",()=>{size(); if(still) draw(0);});
+  still?draw(0):requestAnimationFrame(draw);
+})();
+
+/* ================= init language ================= */
+(function(){
+  let l=null; try{l=localStorage.getItem("lp-lang");}catch(e){}
+  if(location.hash==="#ar") l="ar"; else if(location.hash==="#en") l="en";
+  if(!l) l=(navigator.language||"").toLowerCase().startsWith("ar")?"ar":"en";
+  setLang(l);
+})();
+</script>
+
+</body>
+</html>
