@@ -21,8 +21,7 @@ The site has two languages. English text sits in the page itself; Arabic text si
 
 | What | Search for (English) | Search for (Arabic) |
 |---|---|---|
-| Phone number | `+966 5X XXX XXXX` | (same number, used for both) |
-| Email | `hello@lineproduction.example` | (same email) |
+| Phone number | `+966 59 595 0088` | (same number, used for both) |
 | Office location | `Al Khobar, Eastern Province` | `الخبر، المنطقة الشرقية` |
 | Working hours | `Sun – Thu, 10:00 – 20:00` | `الأحد – الخميس، 10:00 – 20:00` |
 | Essentials price | `SAR 18,000` | `18,000 ريال` |
